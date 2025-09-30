@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AmbuTrack Quilpué – Tablero</title>
+  <link rel="stylesheet" href="assets/app.css" />
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkYhgFQ4YG00vBsCXZI1q8hzTrlNMHpLA&libraries=places"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo-quilpue.png" alt="Hospital de Quilpué" class="logo" onerror="this.style.display='none'" />
+      <div>
+        <h1>AmbuTrack – Hospital de Quilpué</h1>
+        <p>Monitoreo en tiempo real • Ingrese por QR desde el móvil del conductor</p>
+      </div>
+    </div>
+    <div class="status">
+      <span id="connStatus">⏳ Conectando…</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <div id="map" class="map"></div>
+    </section>
+    <section class="right">
+      <h2>Ambulancias</h2>
+      <div id="ambulanceList" class="cards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Hospital de Quilpué · AmbuTrack</small>
+  </footer>
+
+  <script>
+    window.AMBULANCES = [
+      { id: "AMB001", label: "Ambulancia 1" },
+      { id: "AMB002", label: "Ambulancia 2" },
+      { id: "AMB003", label: "Ambulancia 3" }
+    ];
+    window.SUPABASE_URL = "https://flgjxrnmojxjokmenxjm.supabase.co";
+    window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsZ2p4cm5tb2p4am9rbWVueGptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxOTIyNDMsImV4cCI6MjA3NDc2ODI0M30.qhw9L6lEI5Kzxq1vYtQvNPjERJqIXnsJkJn-tj4RNbM";
+  </script>
+  <script src="js/dashboard.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
