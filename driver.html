@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AmbuTrack – Conductor</title>
+  <link rel="stylesheet" href="assets/app.css" />
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkYhgFQ4YG00vBsCXZI1q8hzTrlNMHpLA&libraries=places"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <header class="topbar small"><h1>Conductor – AmbuTrack Quilpué</h1></header>
+  <main class="driver">
+    <div class="card"><label class="lbl">Ambulancia</label><div id="ambId" class="ambid">—</div></div>
+    <div class="card">
+      <label for="dest" class="lbl">Coloque la dirección</label>
+      <input id="dest" type="text" placeholder="Ej: Av. Los Carrera 200, Quilpué" />
+      <button id="goBtn">Calcular ETA</button>
+      <div id="eta" class="eta">ETA: —</div>
+    </div>
+    <div class="card">
+      <div class="hint">Tu ubicación en tiempo real se está compartiendo con el tablero.</div>
+      <div id="gpsStatus" class="gps">GPS: ⏳</div>
+    </div>
+  </main>
+  <script>window.SUPABASE_URL = "https://flgjxrnmojxjokmenxjm.supabase.co"; window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsZ2p4cm5tb2p4am9rbWVueGptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxOTIyNDMsImV4cCI6MjA3NDc2ODI0M30.qhw9L6lEI5Kzxq1vYtQvNPjERJqIXnsJkJn-tj4RNbM";</script>
+  <script src="js/driver.js"></script>
+</body>
+</html>
